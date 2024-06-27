@@ -76,6 +76,7 @@ Run the following command to check the test coverage, which covers most of the l
 ## Documentation
 
 ### Architecture / Solution Explanation
+#### Backend
 - I have created the app considering it would be a production ready app.
 - In production ready apps we do not directly rely on 3rd party APIs, especially when there is a rate limiter applied on the API.
 - So, to implement the data emissions, we shouldn't dirctly call footprint API in our API which is displaying the data on the frontend. Otherwise users will have to wait for a very long time (in minutes) to see the results on the frontend.
@@ -83,6 +84,9 @@ Run the following command to check the test coverage, which covers most of the l
 - When a user (client) requests the data, we see if the data is available in the cache, we return it to the user. If the data is not available in the cache, we trigger a call to the seeder to fetch the data and send a message to user that the data will be ready in sometime, and do not have the api to wait for all the data to be processed.
 - I am also calling the seeder method at the start of the application, so that once the application is deployed we get the data and have it stored in the redis cache. 
 - Also, to prevent the data from being fetched on every deployment, I have added a time (configurable and currently 1 month in `vars.js`) in the cache, so if the data is already available it should not fetch on every restart. If the data was stored before 1 month or more, then the data is fetched again to update in the cache.
+- On frontend, I have used React app with Vite
+- I have created 404 page as well as loader.
+- I am sorting the data on backend inside a year, and then publishing to frontend so that there are minimum processing on frontend.
 
 ### Key Points
 - I have made the project structure as flexible as possible, so it can be expanded any time.
