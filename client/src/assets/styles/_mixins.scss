@@ -1,0 +1,14 @@
+@mixin font-size-line-height-color-weight($fontSize, $lineHeight,$color,$weight) {
+	font-size: $fontSize;
+	line-height: $lineHeight;
+	color:$color;
+	font-weight: $weight;
+}
+@mixin box($width,$height) {
+	width:$width;
+	height:$height
+}
+@mixin font-size-line-height($fontSize,$lineHeight) {
+	font-size:$fontSize;
+	line-height:$lineHeight;
+}
