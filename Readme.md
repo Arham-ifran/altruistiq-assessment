@@ -112,7 +112,9 @@ It is a saying `There is always room for improvements` and I strongly believe in
 - Define a proper scheduling mechanism for updating the data instead of relying on the restarts of the applications, something like cron jobs can be considered.
 - Write unit tests for the missing files.
 - Write CI/CD pipelines for deployment of the application.
+- A few more error use cases can be handled properly
 
+# Below is the original Readme of the test requirements
 
 # Altruistiq hiring assessment
 Welcome to Altruistiq! Thank you very much for taking the time to do this task. 🙏
