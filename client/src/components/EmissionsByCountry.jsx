@@ -81,11 +81,6 @@ function EmissionsByCountry() {
     return <Loader />;
   }
 
-  // Display error message if there was an error fetching data
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   const highestTotal = (currentYearData && currentYearData[0]?.total) || 0;
 
   return (

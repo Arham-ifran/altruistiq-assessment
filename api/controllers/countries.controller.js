@@ -19,7 +19,10 @@ export const getEmissionsByCountry = async (req, res, currentTimeProvider = () =
     } else {
       // If data is not found in the cache, notify the client and prepare the data
       res.json({ message: "Emissions data will be ready soon, check back later!" });
-      const currentTime = currentTimeProvider();
+      let currentTime = currentTimeProvider();
+      if(!currentTime) 
+        currentTime = Date.now();
+      
       const lastFetchTime = await getData(LAST_REFRESH_DATA_API_KEY);
 
       // Check if the data needs to be refreshed based on the cache duration

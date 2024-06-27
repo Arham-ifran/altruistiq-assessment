@@ -40,5 +40,5 @@ app.use('/v1', routesV1);
 const port = PORT || 5000
 // Start the server and listen on port mentioned in .env or 5000
 app.listen(port, () => {
-  console.log('app is listening on port 5000');
+  console.log(`app is listening on port ${port}`);
 });
